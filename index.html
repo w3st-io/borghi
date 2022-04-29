@@ -5,16 +5,6 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<link type="text/css" rel="stylesheet" href="main.css">
-		<style>
-
-			.lbl { color:#fff; font-size:16px; font-weight:bold; position: absolute; bottom:0px; z-index:100; text-shadow:#000 1px 1px 1px; background-color:rgba(0,0,0,0.85); padding:1em }
-			#lbl_left { text-align:left; left:0px }
-			#lbl_right { text-align:left; right:0px }
-
-			.g { color:#aaa }
-			.c { color:#fa0 }
-
-		</style>
 	</head>
 
 	<body>
@@ -32,39 +22,34 @@
 
 		<script type="module">
 			// [IMPORT] //
-			import * as THREE from 'three';
+			import * as THREE from 'three'
 
-			const SCREEN_WIDTH = window.innerWidth;
-			const SCREEN_HEIGHT = window.innerHeight;
+			const SCREEN_WIDTH = window.innerWidth
+			const SCREEN_HEIGHT = window.innerHeight
+			const windowHalfX = window.innerWidth / 2
+			const windowHalfY = window.innerHeight / 2
 
-			let container;
+			let container
+			let camera, scene, scene2, renderer
+			let mouseX = 0, mouseY = 0
 
-			let camera, scene, scene2, renderer;
-
-			let mouseX = 0, mouseY = 0;
-
-			const windowHalfX = window.innerWidth / 2;
-			const windowHalfY = window.innerHeight / 2;
-
+			
 			init();
 			animate();
 
 
 			function init() {
+				container = document.createElement( 'div' )
+				document.body.appendChild( container )
 
-				container = document.createElement( 'div' );
-				document.body.appendChild( container );
+				camera = new THREE.PerspectiveCamera( 35, SCREEN_WIDTH / SCREEN_HEIGHT, 1, 5000 )
+				camera.position.z = 1500
 
-				camera = new THREE.PerspectiveCamera( 35, SCREEN_WIDTH / SCREEN_HEIGHT, 1, 5000 );
-				camera.position.z = 1500;
+				scene = new THREE.Scene()
+				scene2 = new THREE.Scene()
 
-				scene = new THREE.Scene();
-				scene.background = new THREE.Color( 0x000000 );
-				scene.fog = new THREE.Fog( 0x000000, 1500, 4000 );
-
-				scene2 = new THREE.Scene();
-				scene2.background = new THREE.Color( 0x000000 );
-				scene2.fog = new THREE.Fog( 0x000000, 1500, 4000 );
+				scene.background = new THREE.Color( 0x000000 )
+				scene2.background = new THREE.Color('white')
 
 				// GROUND
 
@@ -73,10 +58,10 @@
 
 				imageCanvas.width = imageCanvas.height = 128;
 
-				context.fillStyle = "#444";
+				context.fillStyle = "white";
 				context.fillRect( 0, 0, 128, 128 );
 
-				context.fillStyle = "#fff";
+				context.fillStyle = "white";
 				context.fillRect( 0, 0, 64, 64 );
 				context.fillRect( 64, 64, 64, 64 );
 
@@ -223,4 +208,8 @@
 	body {
 		margin: 0;
 	}
+
+	.lbl { color:#fff; font-size:16px; font-weight:bold; position: absolute; bottom:0px; z-index:100; text-shadow:#000 1px 1px 1px; background-color:rgba(0,0,0,0.85); padding:1em }
+	#lbl_left { text-align:left; left:0px }
+	#lbl_right { text-align:left; right:0px }
 </style>
