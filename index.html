@@ -30,9 +30,6 @@
 			container = document.createElement('div')
 			document.body.appendChild(container)
 
-			// [three.js][TEXTURE] //
-			const texturePainting2 = new THREE.Texture()
-
 			// [three.js] create camera //
 			camera = new THREE.PerspectiveCamera(
 				35,
@@ -46,7 +43,7 @@
 			// [three.js] Create scenes //
 			scene = new THREE.Scene()
 
-			scene.background = new THREE.Color('red')
+			scene.background = new THREE.Color('grey')
 
 			// GROUND //
 			const imageCanvas = document.createElement('canvas')
@@ -74,21 +71,6 @@
 			meshCanvas.rotation.x = - Math.PI / 2
 			meshCanvas.scale.set(1000, 1000, 1000)
 		
-			// [CLONE] //
-			const textureCanvas2 = textureCanvas.clone()
-
-			textureCanvas2.magFilter = THREE.NearestFilter
-			textureCanvas2.minFilter = THREE.NearestFilter
-			const materialCanvas2 = new THREE.MeshBasicMaterial({
-				color: 'red',
-				map: textureCanvas2
-			})
-
-			const meshCanvas2 = new THREE.Mesh(geometry, materialCanvas2)
-			meshCanvas2.rotation.x = - Math.PI / 2
-			meshCanvas2.scale.set(1000, 1000, 1000)
-		
-
 			// [three.js][LOAD] //
 			const texturePainting = new THREE.TextureLoader().load(
 				"https://raw.githubusercontent.com/mrdoob/three.js/master/examples/textures/758px-Canestra_di_frutta_(Caravaggio).jpg",
@@ -96,12 +78,10 @@
 					// [INIT] //
 					const image = texturePainting.image
 
-					texturePainting2.image = image
-					texturePainting2.needsUpdate = true
-
+					// [three.js][ADD] //
 					scene.add(meshCanvas)
 
-					const geometry = new THREE.PlaneGeometry( 100, 100 )
+					const geometry = new THREE.PlaneGeometry(100, 100)
 					const mesh = new THREE.Mesh(geometry, materialPainting)
 
 					addPainting(scene, mesh)
@@ -113,7 +93,6 @@
 						zmesh.scale.y = image.height / 100
 
 						zscene.add(zmesh)
-
 						
 						// [three.js][Mesh] image frame //
 						const meshFrame = new THREE.Mesh(
@@ -125,6 +104,7 @@
 						meshFrame.scale.x = 1.1 * image.width / 100
 						meshFrame.scale.y = 1.1 * image.height / 100
 
+						// [three.js][ADD] frame //
 						zscene.add(meshFrame)
 
 
@@ -138,35 +118,25 @@
 							})
 						)
 
+						meshShadow.rotation.x = - Math.PI / 2
 						meshShadow.position.y = - 1.1 * image.height / 2
 						meshShadow.position.z = - 1.1 * image.height / 2
-						meshShadow.rotation.x = - Math.PI / 2
-
 						meshShadow.scale.x = 1.1 * image.width / 100
 						meshShadow.scale.y = 1.1 * image.height / 100
 						
-						// [SCENE][ADD] //
+						// [three.js][ADD] //
 						zscene.add(meshShadow)
 
-						
 						// Set floor height
 						meshCanvas.position.y = - 1.117 * image.height / 2
-						meshCanvas2.position.y = - 1.117 * image.height / 2
 					}
 				}
 			)
-
-			
 
 			const materialPainting = new THREE.MeshBasicMaterial({
 				map: texturePainting
 			})
 
-			const materialPainting2 = new THREE.MeshBasicMaterial({
-				map: texturePainting2
-			})
-
-			texturePainting2.minFilter = texturePainting2.magFilter = THREE.NearestFilter
 			texturePainting.minFilter = texturePainting.magFilter = THREE.LinearFilter
 			texturePainting.mapping = THREE.UVMapping
 
@@ -201,7 +171,6 @@
 				camera.lookAt(scene.position)
 
 				renderer.clear()
-
 				renderer.render(scene, camera)
 			}
 		</script>
