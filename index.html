@@ -83,13 +83,12 @@
 				meshCanvas.scale.set( 1000, 1000, 1000 )
 			
 				// [CLONE] //
-				
 				const textureCanvas2 = textureCanvas.clone()
 
 				textureCanvas2.magFilter = THREE.NearestFilter
 				textureCanvas2.minFilter = THREE.NearestFilter
 				const materialCanvas2 = new THREE.MeshBasicMaterial({
-					color: 0xffccaa,
+					color: 'red',
 					map: textureCanvas2
 				})
 
@@ -103,65 +102,87 @@
 					"https://raw.githubusercontent.com/mrdoob/three.js/master/examples/textures/758px-Canestra_di_frutta_(Caravaggio).jpg",
 					function () {
 						// [INIT] //
-						const image = texturePainting.image;
+						const image = texturePainting.image
 
-						texturePainting2.image = image;
-						texturePainting2.needsUpdate = true;
+						texturePainting2.image = image
+						texturePainting2.needsUpdate = true
 
-						scene.add( meshCanvas );
-						scene2.add( meshCanvas2 );
+						scene.add(meshCanvas)
+						scene2.add(meshCanvas2)
 
-						const geometry = new THREE.PlaneGeometry( 100, 100 );
-						const mesh = new THREE.Mesh( geometry, materialPainting );
-						const mesh2 = new THREE.Mesh( geometry, materialPainting2 );
+						const geometry = new THREE.PlaneGeometry( 100, 100 )
+						const mesh = new THREE.Mesh(geometry, materialPainting)
+						const mesh2 = new THREE.Mesh(geometry, materialPainting2)
 
-						addPainting( scene, mesh );
-						addPainting( scene2, mesh2 );
+						addPainting(scene, mesh)
+						addPainting(scene2, mesh2)
 
-						function addPainting( zscene, zmesh ) {
+						// Add Paiting to the scene
+						function addPainting(zscene, zmesh) {
+							zmesh.scale.x = image.width / 100
+							zmesh.scale.y = image.height / 100
 
-							zmesh.scale.x = image.width / 100;
-							zmesh.scale.y = image.height / 100;
+							zscene.add(zmesh)
 
-							zscene.add( zmesh );
+							const meshFrame = new THREE.Mesh(
+								geometry,
+								new THREE.MeshBasicMaterial({ color: 0x000000 })
+							)
 
-							const meshFrame = new THREE.Mesh( geometry, new THREE.MeshBasicMaterial( { color: 0x000000 } ) );
-							meshFrame.position.z = - 10.0;
-							meshFrame.scale.x = 1.1 * image.width / 100;
-							meshFrame.scale.y = 1.1 * image.height / 100;
-							zscene.add( meshFrame );
+							meshFrame.position.z = - 10.0
+							meshFrame.scale.x = 1.1 * image.width / 100
+							meshFrame.scale.y = 1.1 * image.height / 100
 
-							const meshShadow = new THREE.Mesh( geometry, new THREE.MeshBasicMaterial( { color: 0x000000, opacity: 0.75, transparent: true } ) );
-							meshShadow.position.y = - 1.1 * image.height / 2;
-							meshShadow.position.z = - 1.1 * image.height / 2;
-							meshShadow.rotation.x = - Math.PI / 2;
-							meshShadow.scale.x = 1.1 * image.width / 100;
-							meshShadow.scale.y = 1.1 * image.height / 100;
-							zscene.add( meshShadow );
+							zscene.add(meshFrame)
 
-							const floorHeight = - 1.117 * image.height / 2;
-							meshCanvas.position.y = meshCanvas2.position.y = floorHeight;
+							const meshShadow = new THREE.Mesh(
+								geometry,
+								new THREE.MeshBasicMaterial({
+									color: 0x000000,
+									opacity: 0.75,
+									transparent: true
+								})
+							)
+							meshShadow.position.y = - 1.1 * image.height / 2
+							meshShadow.position.z = - 1.1 * image.height / 2
+							meshShadow.rotation.x = - Math.PI / 2
+
+							meshShadow.scale.x = 1.1 * image.width / 100
+							meshShadow.scale.y = 1.1 * image.height / 100
+
+							zscene.add(meshShadow)
+
+							const floorHeight = - 1.117 * image.height / 2
+							meshCanvas.position.y = meshCanvas2.position.y = floorHeight
 						}
 					}
 				)
 
 				const texturePainting2 = new THREE.Texture()
-				const materialPainting = new THREE.MeshBasicMaterial( { color: 0xffffff, map: texturePainting } )
-				const materialPainting2 = new THREE.MeshBasicMaterial( { color: 0xffccaa, map: texturePainting2 } )
 
-				texturePainting2.minFilter = texturePainting2.magFilter = THREE.NearestFilter;
-				texturePainting.minFilter = texturePainting.magFilter = THREE.LinearFilter;
-				texturePainting.mapping = THREE.UVMapping;
+				const materialPainting = new THREE.MeshBasicMaterial({
+					color: 0xffffff,
+					map: texturePainting
+				})
+
+				const materialPainting2 = new THREE.MeshBasicMaterial({
+					color: 0xffccaa,
+					map: texturePainting2
+				})
+
+				texturePainting2.minFilter = texturePainting2.magFilter = THREE.NearestFilter
+				texturePainting.minFilter = texturePainting.magFilter = THREE.LinearFilter
+				texturePainting.mapping = THREE.UVMapping
 
 
 				renderer = new THREE.WebGLRenderer({ antialias: true })
 
-				renderer.setPixelRatio( window.devicePixelRatio )
-				renderer.setSize( SCREEN_WIDTH, SCREEN_HEIGHT )
+				renderer.setPixelRatio(window.devicePixelRatio)
+				renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT)
 
 				renderer.autoClear = false
 
-				renderer.domElement.style.position = "relative"
+				renderer.domElement.style.position = 'relative'
 
 				container.appendChild(renderer.domElement)
 
@@ -178,18 +199,19 @@
 				camera.position.x += (mouseX - camera.position.x) * .05
 				camera.position.y += (- (mouseY - 200) - camera.position.y) * .05
 
-				camera.lookAt( scene.position )
+				camera.lookAt(scene.position)
 
 				renderer.clear()
-				
-				renderer.setScissorTest( true )
+
+				renderer.setScissorTest(true)
 
 				renderer.setScissor(0, 0, SCREEN_WIDTH / 2 - 2, SCREEN_HEIGHT)
 
 				renderer.render(scene, camera)
 
 				renderer.setScissor(
-					SCREEN_WIDTH / 2, 0,
+					SCREEN_WIDTH / 2,
+					0,
 					SCREEN_WIDTH / 2 - 2,
 					SCREEN_HEIGHT
 				)
@@ -206,8 +228,4 @@
 	body {
 		margin: 0;
 	}
-
-	.lbl { color:#fff; font-size:16px; font-weight:bold; position: absolute; bottom:0px; z-index:100; text-shadow:#000 1px 1px 1px; background-color:rgba(0,0,0,0.85); padding:1em }
-	#lbl_left { text-align:left; left:0px }
-	#lbl_right { text-align:left; right:0px }
 </style>
