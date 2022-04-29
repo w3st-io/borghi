@@ -1,184 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
 	<body>
-		<!-- Import maps polyfill -->
-		<!-- Remove this when import maps will be widely supported -->
-		<script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
-		<script type="importmap">
-			{
-				"imports": {
-					"three": "https://www.unpkg.com/three/build/three.module.js"
-				}
-			}
-		</script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+		
+		<div class="row w-100 m-0">
+			<div class="col-4">
+				sdfsdf
+			</div>
 
-		<script type="module">
-			// [IMPORT] //
-			import * as THREE from 'three'
-
-			// [INIT] const //
-			const WINDOW_WIDTH = window.innerWidth
-			const WINDOW_HEIGHT = window.innerHeight
-			const windowHalfX = window.innerWidth / 2
-			const windowHalfY = window.innerHeight / 2
-
-			// [INIT] //
-			let container, camera, scene, renderer
-			let mouseX = 0, mouseY = 0
-
-			// [DOM] create element div //
-			container = document.createElement('div')
-			document.body.appendChild(container)
-
-			// [three.js] create camera //
-			camera = new THREE.PerspectiveCamera(
-				35,
-				WINDOW_WIDTH / WINDOW_HEIGHT,
-				1,
-				5000
-			)
-				
-			camera.position.z = 1500
-
-			// [three.js] Create scenes //
-			scene = new THREE.Scene()
-
-			scene.background = new THREE.Color('grey')
-
-			// GROUND //
-			const imageCanvas = document.createElement('canvas')
-			imageCanvas.width = 128
-			imageCanvas.height = 128
+			<div class="col-8 m-0 p-0">
+				<div class="box">
+					<div id="3d">
 			
-			const context = imageCanvas.getContext('2d')
-			context.fillStyle = 'white'
-			context.fillRect(0, 0, 128, 128)
-
-			const textureCanvas = new THREE.CanvasTexture(imageCanvas)
-
-			textureCanvas.repeat.set(1000, 1000)
-		
-			textureCanvas.wrapS = THREE.RepeatWrapping
-			textureCanvas.wrapT = THREE.RepeatWrapping
-
-			const materialCanvas = new THREE.MeshBasicMaterial({
-				map: textureCanvas
-			})
-
-			const geometry = new THREE.PlaneGeometry(100, 100)
-
-			const meshCanvas = new THREE.Mesh(geometry, materialCanvas)
-			meshCanvas.rotation.x = - Math.PI / 2
-			meshCanvas.scale.set(1000, 1000, 1000)
-		
-			// [three.js][LOAD] //
-			const texturePainting = new THREE.TextureLoader().load(
-				"https://raw.githubusercontent.com/mrdoob/three.js/master/examples/textures/758px-Canestra_di_frutta_(Caravaggio).jpg",
-				function () {
-					// [INIT] //
-					const image = texturePainting.image
-
-					// [three.js][ADD] //
-					scene.add(meshCanvas)
-
-					const geometry = new THREE.PlaneGeometry(100, 100)
-					const mesh = new THREE.Mesh(geometry, materialPainting)
-
-					addPainting(scene, mesh)
-
-					// Add Paiting to the scene
-					function addPainting(zscene, zmesh) {
-						// [three.js][Mesh] image - Set the scale of the image //
-						zmesh.scale.x = image.width / 100
-						zmesh.scale.y = image.height / 100
-
-						zscene.add(zmesh)
-						
-						// [three.js][Mesh] image frame //
-						const meshFrame = new THREE.Mesh(
-							geometry,
-							new THREE.MeshBasicMaterial({ color: 0x000000 })
-						)
-
-						meshFrame.position.z = - 10.0
-						meshFrame.scale.x = 1.1 * image.width / 100
-						meshFrame.scale.y = 1.1 * image.height / 100
-
-						// [three.js][ADD] frame //
-						zscene.add(meshFrame)
-
-
-						// [three.js][Mesh] shadow //
-						const meshShadow = new THREE.Mesh(
-							geometry,
-							new THREE.MeshBasicMaterial({
-								color: 0x000000,
-								opacity: 0.75,
-								transparent: true
-							})
-						)
-
-						meshShadow.rotation.x = - Math.PI / 2
-						meshShadow.position.y = - 1.1 * image.height / 2
-						meshShadow.position.z = - 1.1 * image.height / 2
-						meshShadow.scale.x = 1.1 * image.width / 100
-						meshShadow.scale.y = 1.1 * image.height / 100
-						
-						// [three.js][ADD] //
-						zscene.add(meshShadow)
-
-						// Set floor height
-						meshCanvas.position.y = - 1.117 * image.height / 2
-					}
-				}
-			)
-
-			const materialPainting = new THREE.MeshBasicMaterial({
-				map: texturePainting
-			})
-
-			texturePainting.minFilter = texturePainting.magFilter = THREE.LinearFilter
-			texturePainting.mapping = THREE.UVMapping
-
-
-			renderer = new THREE.WebGLRenderer({ antialias: true })
-
-			renderer.setPixelRatio(window.devicePixelRatio)
-			renderer.setSize(WINDOW_WIDTH, WINDOW_HEIGHT)
-
-			renderer.autoClear = false
-
-			renderer.domElement.style.position = 'relative'
-
-			container.appendChild(renderer.domElement)
-
-			// [DOM][mousemove] //
-			document.addEventListener('mousemove', function (e) {
-				mouseX = (e.clientX - windowHalfX)
-				mouseY = (e.clientY - windowHalfY)
-			})
-
-
-			// [FUNCTION] //
-			animate()
-
-			function animate() {
-				requestAnimationFrame(animate)
-
-				camera.position.x += (mouseX - camera.position.x) * .05
-				camera.position.y += (- (mouseY - 200) - camera.position.y) * .05
-
-				camera.lookAt(scene.position)
-
-				renderer.clear()
-				renderer.render(scene, camera)
-			}
-		</script>
+					</div>
+				</div>
+			</div>
+		</div>
 	</body>
+	
+	<!-- Import maps polyfill -->
+	<!-- Remove this when import maps will be widely supported -->
+	<script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+	<script type="importmap">
+		{
+			"imports": {
+				"three": "https://www.unpkg.com/three/build/three.module.js"
+			}
+		}
+	</script>
+
+	<script type="module">
+		// [IMPORT] //
+		import * as THREE from 'three'
+
+		// [INIT] const //
+		let box = document.querySelector('.box')
+		const windowWidth = box.offsetWidth
+		const windowHeight = window.innerHeight
+		console.log(box);
+
+		const imageURL = "https://raw.githubusercontent.com/mrdoob/three.js/master/examples/textures/758px-Canestra_di_frutta_(Caravaggio).jpg"
+
+		// [INIT] //
+		let container, camera, scene, renderer
+		let mouseX = 0, mouseY = 0
+
+		// [DOM] create element div //
+		container = document.createElement('div')
+		document.getElementById('3d').appendChild(container)
+
+		// [three.js] create camera //
+		camera = new THREE.PerspectiveCamera(
+			35,
+			windowWidth / windowHeight,
+			1,
+			5000
+		)
+			
+		camera.position.z = 1500
+
+		// [three.js] Create scenes //
+		scene = new THREE.Scene()
+
+		scene.background = new THREE.Color('white')
+
+		// GROUND //
+		const imageCanvas = document.createElement('canvas')
+		imageCanvas.width = 128
+		imageCanvas.height = 128
+		
+		const context = imageCanvas.getContext('2d')
+		context.fillStyle = 'white'
+		context.fillRect(0, 0, 128, 128)
+
+		const textureCanvas = new THREE.CanvasTexture(imageCanvas)
+
+		textureCanvas.repeat.set(1000, 1000)
+	
+		textureCanvas.wrapS = THREE.RepeatWrapping
+		textureCanvas.wrapT = THREE.RepeatWrapping
+
+		const materialCanvas = new THREE.MeshBasicMaterial({
+			map: textureCanvas
+		})
+
+		const geometry = new THREE.PlaneGeometry(100, 100)
+
+		const meshCanvas = new THREE.Mesh(geometry, materialCanvas)
+		
+		meshCanvas.rotation.x = - Math.PI / 2
+		meshCanvas.scale.set(1000, 1000, 1000)
+	
+		// [three.js][LOAD] Add painting to the scene //
+		const texturePainting = new THREE.TextureLoader().load(
+			imageURL,
+			function () {
+				// [INIT] //
+				const image = texturePainting.image
+
+				// [three.js][ADD] //
+				scene.add(meshCanvas)
+
+				
+				// [three.js][Mesh] Image //
+				const mesh = new THREE.Mesh(
+					new THREE.PlaneGeometry(100, 100),
+					materialPainting
+				)
+
+				// [three.js][SCALE] //
+				mesh.scale.x = image.width / 100
+				mesh.scale.y = image.height / 100
+
+				// [three.js][ADD] //
+				scene.add(mesh)
+				
+				
+				// [three.js][Mesh] Image-Frame //
+				const meshFrame = new THREE.Mesh(
+					new THREE.PlaneGeometry(100, 100),
+					new THREE.MeshBasicMaterial({ color: 0x000000 })
+				)
+
+				// [three.js][SCALE] //
+				meshFrame.position.z = - 10.0
+				meshFrame.scale.x = 1.1 * image.width / 100
+				meshFrame.scale.y = 1.1 * image.height / 100
+
+				// [three.js][ADD] Image-Frame //
+				scene.add(meshFrame)
+
+
+				// [three.js][Mesh] Shadow //
+				const meshShadow = new THREE.Mesh(
+					new THREE.PlaneGeometry(100, 100),
+					new THREE.MeshBasicMaterial({
+						color: 0x000000,
+						opacity: 0.75,
+						transparent: true
+					})
+				)
+
+				// [three.js][SCALE] //
+				meshShadow.rotation.x = - Math.PI / 2
+				meshShadow.position.y = - 1.1 * image.height / 2
+				meshShadow.position.z = - 1.1 * image.height / 2
+				meshShadow.scale.x = 1.1 * image.width / 100
+				meshShadow.scale.y = 1.1 * image.height / 100
+				
+				// [three.js][ADD] Shadow //
+				scene.add(meshShadow)
+
+				
+				// Set floor height
+				meshCanvas.position.y = - 1.117 * image.height / 2
+			}
+		)
+
+
+		const materialPainting = new THREE.MeshBasicMaterial({
+			map: texturePainting
+		})
+
+		texturePainting.minFilter = texturePainting.magFilter = THREE.LinearFilter
+		texturePainting.mapping = THREE.UVMapping
+
+
+		// [three.js][WebGLRenderer] //
+		renderer = new THREE.WebGLRenderer({ antialias: true })
+		renderer.setPixelRatio(window.devicePixelRatio)
+		renderer.setSize(windowWidth, windowHeight)
+		renderer.autoClear = false
+		renderer.domElement.style.position = 'relative'
+
+		// [DOM] //
+		container.appendChild(renderer.domElement)
+
+		// [DOM][mousemove] //
+		document.addEventListener('mousemove', function (e) {
+			mouseX = (e.clientX - (windowWidth / 2))
+			mouseY = (e.clientY - (windowHeight / 2))
+		})
+
+		// [FUNCTION] //
+		animate()
+
+		function animate() {
+			requestAnimationFrame(animate)
+
+			camera.position.x += (mouseX - camera.position.x) * .05
+			camera.position.y += (- (mouseY - 200) - camera.position.y) * .05
+
+			camera.lookAt(scene.position)
+
+			renderer.clear()
+			renderer.render(scene, camera)
+		}
+	</script>
 </html>
 
 <style>
 	body {
 		margin: 0;
+	}
+
+	.box {
+		background-color: red;
 	}
 </style>
