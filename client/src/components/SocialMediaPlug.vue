@@ -1,14 +1,37 @@
 <template>
-	<div :class="`text-${textAlign}`">
-		<a :href="defaultData.instagramLink" target="_blank" :class="`text-${variant}`">
-			<InstagramIcon :size="size" class="mr-3" />
+	<div class="text-center">
+		<a
+			v-if="defaultData.facebookLink != ''"
+			:href="defaultData.facebookLink"
+			target="_blank"
+			:class="`text-${variant}`"
+		>
+			<FacebookIcon :stroke-width="strokeWidth" :size="size" class="mx-2" />
+		</a>
+
+		<a
+			v-if="defaultData.instagramLink != ''"
+			:href="defaultData.instagramLink"
+			target="_blank"
+			:class="`text-${variant}`"
+		>
+			<InstagramIcon :stroke-width="strokeWidth" :size="size" class="mx-2" />
+		</a>
+
+		<a
+			v-if="defaultData.youtubeLink != ''"
+			:href="defaultData.youtubeLink"
+			target="_blank"
+			:class="`text-${variant}`"
+		>
+			<YoutubeIcon :stroke-width="strokeWidth" :size="size" class="mx-2" />
 		</a>
 	</div>
 </template>
 
 <script>
 	// [IMPORT] //
-	import { InstagramIcon, } from 'vue-feather-icons'
+	import { FacebookIcon, InstagramIcon, YoutubeIcon } from 'vue-feather-icons'
 
 	// [IMPORT] Personal //
 	import defaultData from '@/defaults/companyInfo'
@@ -17,7 +40,7 @@
 		props: {
 			size: {
 				type: String,
-				default: '24',
+				default: "24",
 			},
 
 			variant: {
@@ -25,14 +48,16 @@
 				default: 'light'
 			},
 
-			textAlign: {
+			strokeWidth: {
 				type: String,
-				default: 'center'
+				default: '1.5'
 			},
 		},
 
 		components: {
+			FacebookIcon,
 			InstagramIcon,
+			YoutubeIcon
 		},
 		
 		data() {

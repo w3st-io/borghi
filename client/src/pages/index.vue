@@ -1,69 +1,59 @@
 <template>
-	<BRow class="m-0 bg-white">
-		<BCol cols="12" sm="1" md="3" lg="4"></BCol>
-
-		<BCol cols="12" sm="10" md="6" lg="4">
-			<div class="logo-container">
-				<div class="w-100 text-center vertical-center">
-					<img :src="logo" class="w-100 px-5" style="max-width: 450px;">
-				</div>
-			</div>
-
-			<div class="fixed-bottom px-1 py-1">
-				<BAlert
-					variant="info"
-					fade
-					:show="showDismissibleAlert"
-					class="text-center mx-auto"
-					style="max-width: 500px;"
-				>
-					<h6 class="">We are currently only taking appointments</h6>
-					<BButton
-						variant="success"
-						size="sm"
-						@click="showDismissibleAlert = false"
-						class="mx-3 my-0"
-					>Got It ✓</BButton>
-				</BAlert>
-			</div>
-		</BCol>
-
-		<BCol cols="12" sm="1" md="3" lg="4"></BCol>
-	</BRow>
+	<div v-if="loading == false" class="background-img">
+		<div class="" style="height: 100vh;"></div>
+		<!-- INFO -->
+		<ContactInfo />
+	</div>
 </template>
 
 <script>
+	// [IMPORT] Personal //
+	import ContactInfo from '@/components/ContactInfo'
+	import pageData from '@/defaults/pages'
+	import router from '@/router'
+
 	export default {
+		name: 'Home',
+
+		components: {
+			ContactInfo,
+		},
+
 		data() {
 			return {
-				logo: require('../assets/logo.svg'),
-				showDismissibleAlert: true,
+				loading: true,
+
+				pageData: pageData,
+				reqData: {},
+				reikiTitle: 'Reiki Title',
+				reikiDescription: 'Reiki description goes here',
+				services: [],
 			}
 		},
 
-		components: {
-			//JJLogo,
+		methods: {
+			redirectCompanyInfo() { router.push({ name: 'book' }) },
 		},
 
-		created() {
+		async created() {
 			this.$store.state.isHomePage = true
+
+			this.loading = false
 		},
 
 		destroyed() {
 			this.$store.state.isHomePage = false
-		}
+		},
 	}
 </script>
 
 <style lang="scss" scoped>
-	.logo-container {
-		position: relative;
-		height: 100vh;
+	.background-img {
+		background-image: url('../assets/images/image.jpg');
 	}
 
-	.vertical-center {
-		position: absolute;
-		top: 38%;
-		transform: translateY(-30%);
-	}
+	.fade-enter-active,
+	.fade-leave-active { transition: opacity 1s; }
+	.fade-enter,
+	.fade-leave-to { opacity: 0; }
 </style>

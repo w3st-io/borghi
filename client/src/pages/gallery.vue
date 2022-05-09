@@ -1,71 +1,54 @@
 <template>
-	<div class="py-5 bg-white">
-		<BContainer>
-			<!-- Instagram -->
-			<div class="mx-auto mb-5">
-				<viewer :options="{ title: false, transition: false, }">
-					<BRow>
-						<!-- Title -->
-						<BCol cols="12">
-							<h1 class="mb-3 text-center text-primary">Instagram</h1>
-						</BCol>
+	<BContainer class="my-5">
+			<!-- Page Title -->
+			<h1 class="mb-3 text-center font-weight-bold text-primary">
+				{{ pageData.title }}
+			</h1>
 
-						<BCol
-							v-for="(item, i) in instagramFeed" :key="i"
-							cols="6" md="4" lg="3"
-						>
-							<div class="py-3">
-								<img
-									:src="item.media_url"
-									v-lazy="item.media_url"
-									class="w-100"
-								>
-							</div>
-						</BCol>
-					</BRow>
-				</viewer>
-			</div>
-		</BContainer>
-	</div>
+			<FoodImages
+				:images="[
+					'https://images2.imgbox.com/c4/10/iDBl4xhG_o.jpg',
+					'https://images2.imgbox.com/41/e3/CeI2oMmZ_o.jpg',
+					'https://images2.imgbox.com/3c/54/nB7dUa9T_o.jpg',
+					'https://images2.imgbox.com/bd/92/6rUWWZ64_o.jpg',
+					'https://images2.imgbox.com/64/4a/kv6E0DkI_o.jpg',
+					'https://images2.imgbox.com/9e/75/FVNJaOwT_o.jpg',
+					'https://images2.imgbox.com/ed/7a/Em86ViCk_o.jpg',
+					'https://images2.imgbox.com/e7/0b/e0wkwu8J_o.jpg',
+					'https://images2.imgbox.com/22/63/MSDjcNtv_o.jpg',
+					'https://images2.imgbox.com/69/35/A5MBYgnS_o.jpg',
+					'https://images2.imgbox.com/14/f7/7MegnUg5_o.jpg',
+					'https://images2.imgbox.com/3c/b2/30ZURsrn_o.jpg',
+					'https://images2.imgbox.com/31/c8/6GD8j9X8_o.jpg',
+					'https://images2.imgbox.com/80/4c/SQd9l4fz_o.jpg',
+					'https://images2.imgbox.com/ae/e6/xlYuj6z7_o.jpg',
+					'https://images2.imgbox.com/1d/94/rKEp0rbC_o.jpg',
+					'https://images2.imgbox.com/c2/b0/xIVYeMhy_o.jpg',
+					'https://images2.imgbox.com/33/7c/wDXQ3LO0_o.jpg',
+					'https://images2.imgbox.com/b0/c1/grBrfER8_o.jpg',
+					'https://images2.imgbox.com/be/b0/KifBVMg7_o.jpg',
+					'https://images2.imgbox.com/7d/ae/171fnJAp_o.jpg',
+					'https://images2.imgbox.com/a7/e3/AQQ4l2od_o.jpg',
+					'https://images2.imgbox.com/e9/6c/UzREwvLs_o.jpeg',
+				]"
+			/>
+	</BContainer>
 </template>
 
 <script>
-	import PageService from '../services/PageService'
+	// [IMPORT] Personal //
+	import FoodImages from '../components/home/FoodImages.vue'
+	import pageData from '@/defaults/pages/gallery'
 
 	export default {
 		data() {
 			return {
-				instagramFeed: [],
+				pageData: pageData,
 			}
 		},
 
-		methods: {
-			async getPageData() {
-				this.reqData = await PageService.s_gallery()
-
-				if (this.reqData.status) {
-					this.instagramFeed = this.reqData.instagramFeed
-				}
-			}
-		},
-
-		async created() {
-			await this.getPageData()
-		},
+		components: {
+			FoodImages
+		}
 	}
 </script>
-
-<style lang="scss">
-	.label {
-		background-color: rgba(0, 0, 0, 0.48);
-	}
-
-	.icon {
-		img {
-			transition: .6s;
-			filter: grayscale(100%);
-		}
-
-		&:hover { img { filter: grayscale(0%); } } 
-	}
-</style>

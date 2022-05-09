@@ -1,123 +1,53 @@
 <template>
-	<div
-		id="app"
-		:key="appKey"
-		:class="{ 'aw-background': $store.state.nodeENV == 'production' }"
-	>
-		<!-- Top Navbar & Side Menu -->
-		<NavBar
-			v-if="$store.state.showNavBar"
-			class="position-fixed w-100 nav-z-index"
-		/>
+	<div id="app">
+		<!-- UI -->
+		<NavBar />
 
-		<div
-			v-if="$store.state.showNavBar && !$store.state.isHomePage"
-			class="bg-secondary nav-spacer2"
-		></div>
+		<div v-if="!$store.state.isHomePage" class="d-none d-lg-block" style="height: 126px;" />
+		<div v-if="!$store.state.isHomePage" class="d-block d-lg-none" style="height: 85.11px;" />
 
-		<!-- Router -->
-		<RouterView :key="$route.name + ($route.params.id || '')" />
+		<!-- RouterView -->
+		<RouterView />
 
-		<!-- Bottom Footer -->
-		<Footer v-if="$store.state.showFooter" />
-
-		<!-- Admin Bottom Bar -->
-		<AdminNavBar v-if="$store.state.admin.logged" />
-
-		<!-- Floating Pop Up Banner -->
-		<PopUpBanner
-			v-if="message"
-			:message="message"
-			BGColor="info"
-		/>
+		<!-- Footer -->
+		<Footer />
 	</div>
 </template>
 
 <script>
 	// [IMPORT] Personal //
-	import AdminNavBar from '@/components/admin/AdminNavBar'
-	import PopUpBanner from '@/components/inform/PopUpBanner'
-	import NavBar from '@/components/nav/NavBar'
-	import Footer from '@/components/nav/Footer'
-	import { EventBus } from '@/main'
-	import Service from '@/services'
-	import AdminService from '@/services/admin/AdminService'
+	import NavBar from "@/components/nav/NavBar"
+	import Footer from "@/components/nav/Footer"
 
 	export default {
-		name: 'App',
-
-		data() {
-			return {
-				message: '',
-				appKey: 0,
-				reqData: {},
-			}
-		},
-
 		components: {
-			AdminNavBar,
-			PopUpBanner,
 			NavBar,
 			Footer,
 		},
 
 		methods: {
-			forceRerender() { this.appKey++ },
-
-			async setNodeEnv() {
-				try {
-					this.reqData = await Service.index()
-
-					if (this.reqData.status) {
-						// [LOCAL-STORAGE] //
-						localStorage.setItem('node_env', this.reqData.node_env)
-
-						// [STORE] //
-						this.$store.state.nodeENV = this.reqData.node_env
-					}
-
-					if (localStorage.admintoken) {
-						this.$store.state.admin.logged = true
-					}
-				}
-				catch (err) { console.log(`App: Error --> ${err}`) }
+			onResize() {
+				this.$store.state.window.innerWidth = window.innerWidth
 			},
-
-			log() {
-				console.log('%%% [APP] %%%')
-				console.log('localStorage:', localStorage)
-			}
 		},
 
-		async created() {
-			this.forceRerender()
+		mounted() {
+			this.$nextTick(() => {
+				window.addEventListener('resize', this.onResize)
+			})
+		},
 
-			await this.setNodeEnv()
-
-			// [ADMIN] checkIn //
-			await AdminService.s_checkIn()
-			
-			EventBus.$on('force-rerender', () => { this.forceRerender() })
-
-			// [LOG] //
-			this.log()
+		beforeDestroy() { 
+			window.removeEventListener('resize', this.onResize)
 		},
 	}
 </script>
 
 <style lang="scss">
-	body {
-		background-color: rgb(245, 245, 245) !important;
-	}
+	// [IMPORT] // heading // * //
+	@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100&display=swap');
 
-	body.loading-no-scroll { overflow: hidden; }
+	* { font-family: 'League Spartan', sans-serif !important; }
+	h1,h2,h3,h4,h5,h6 { font-family: 'League Spartan', sans-serif !important; }
 
-	.nav-z-index {
-		z-index: 2000;
-		top: 0;
-	}
-
-	.nav-spacer2 {
-		padding-top: 132px;	
-	}
 </style>

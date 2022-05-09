@@ -3,15 +3,27 @@ const config = require('../s-config')
 
 
 class Auth {
-	static admin() {
+	static adminUserSystem() {
 		return (req, res, next) => {
-			if (config.functionality.admin === 'true') { next() }
+			if (config.ADMIN_USER_SYSTEM) { next() }
 			else {
-				res.send({
+				res.status(200).send({
 					executed: true,
 					status: false,
-					location: '/s-middleware/Functionality',
-					message: 'This app does not support a user/admin system',
+					message: 'This app does not support a user/admin system'
+				})
+			}
+		}
+	}
+
+	static paymentsSystem() {
+		return (req, res, next) => {
+			if (config.PAYMENT_SYSTEM) { next() }
+			else {
+				res.status(200).send({
+					executed: true,
+					status: false,
+					message: 'This app does not support a payment system'
 				})
 			}
 		}
@@ -19,4 +31,5 @@ class Auth {
 }
 
 
+// [EXPORT] //
 module.exports = Auth

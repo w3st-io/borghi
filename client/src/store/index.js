@@ -2,24 +2,30 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
+
+// [USE] //
 Vue.use(Vuex)
+
 
 export default new Vuex.Store({
 	state: {
-		nodeENV: 'development',
-		isHomePage: false,
-		
+		node_env: localStorage.node_env == 'development' ? 'development' : 'production',
+
+		showIntro: true,
 		loading: false,
 		
-		showIntro: true,
 		showMenu: false,
-		showNavBar: true,
-		showNavBarLogo: true,
-		showFooter: true,
 
-		admin: {
-			logged: false,
-			decoded: {}
+		userLogged: false,
+		user_decoded: {},
+
+		adminLogged: false,
+		admin_decoded: {},
+
+		isHomePage: false,
+
+		window: {
+			innerWidth: window.innerWidth
 		},
 	},
 

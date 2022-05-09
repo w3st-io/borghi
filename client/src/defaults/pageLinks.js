@@ -2,52 +2,43 @@
 const feather = require('feather-icons')
 
 
-// [INIT] const //
-const navIconConfig = {
-	'stroke-width': 2,
-	width: 18,
-	height: 18,
-	'class': 'pb-1'
-}
-const sideMenuIconConfig = {
-	'stroke-width': 2.4,
-	width: 34,
-	height: 34,
-	'class': 'my-2'
-}
-
-
+// [EXPORT] //
 module.exports = [
 	{
 		path: '/',
-		text: '',
-		navIcon: feather.icons.home.toSvg(navIconConfig),
-		sideMenuIcon: feather.icons.home.toSvg(sideMenuIconConfig),
+		text: 'Home',
+		navIcon: feather.icons.home.toSvg({
+			'stroke-width': 2.4,
+			width: 16,
+			height: 16,
+			'class': ''
+		}),
+		slideMenuIcon: feather.icons.home.toSvg({
+			'stroke-width': 2.4,
+			width: 34,
+			height: 34,
+			'class': 'my-2'
+		}),
+		children: [],
+	},
+	{
+		path: '/menu',
+		text: 'Menu',
+		children: [],
 	},
 	{
 		path: '/contact',
 		text: 'Contact',
+		children: [],
 	},
 	{
-		path: '/trade',
-		text: 'Trade',
-	},
-	{
-		path: '/services',
-		text: 'Services',
+		path: '/Gallery',
+		text: 'Contact',
+		children: [],
 	},
 	{
 		path: '/about',
 		text: 'About',
+		children: [],
 	},
-	{
-		path: '/gallery',
-		text: 'Gallery',
-	},
-	/*
-	{
-		path: '/shop',
-		text: 'Shop',
-	},
-	*/
 ]
