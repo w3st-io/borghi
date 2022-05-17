@@ -1,6 +1,13 @@
 <template>
 	<div class="w-100 fixed-top">
-		<!-- Desktop Menu -->
+		<!-- Left -->
+		<div class="mobile-nav-left py-4">
+			<div class="ml-3">
+				<img :src="logoImg" alt="" style="max-width: 35px;">
+			</div>
+		</div>
+
+		<!-- Center -->
 		<div
 			class="mobile-nav py-4 transition text-center"
 			:class="[navClass]"
@@ -9,11 +16,13 @@
 			<h6 class="m-0">{{ companyInfo.companyCaption1 }}</h6>
 		</div>
 
-		<!-- Mobile Menu -->
+		<!-- Right -->
 		<div class="mobile-nav-right py-4">
-			<BButton variant="dark" class="mr-3" @click="toggle()">
-				<MenuIcon />
-			</BButton>
+			<div class="mr-3">
+				<BButton variant="dark" @click="toggle()">
+					<MenuIcon />
+				</BButton>
+			</div>
 		</div>
 
 		<!-- Hidden Side Menu -->
@@ -39,7 +48,7 @@
 
 		data() {
 			return {
-				titleClass: '',
+				logoImg: require('../../assets/logo.png'),
 				navClass: '',
 				companyInfo: companyInfo,
 				buttons: buttons,
@@ -55,11 +64,9 @@
 			handleScroll() {
 				if (window.scrollY > 0) {
 					this.navClass = 'bg-glass text-light'
-					this.titleClass = 'text-white'
 				}
 				else {
-					this.navClass = ''
-					this.titleClass = ''
+					this.navClass = 'text-shadow'
 				}
 			},
 		},
@@ -77,8 +84,11 @@
 		transition: .5s;
 	}
 
-	.nav {
-		z-index: 100;
+	.mobile-nav-left {
+		z-index: 101;
+		position: fixed; /* or absolute */
+		top: 0;
+		left: 0;
 	}
 
 	.mobile-nav {
@@ -87,6 +97,13 @@
 		top: 0;
 		left: 0;
 		width: 100%;
+	}
+
+	.mobile-nav-right {
+		z-index: 101;
+		position: fixed; /* or absolute */
+		top: 0;
+		right: 0;
 	}
 
 	.bg-glass {
@@ -98,10 +115,7 @@
 		font-weight: bold;
 	}
 
-	.mobile-nav-right {
-		z-index: 100;
-		position: fixed; /* or absolute */
-		top: 0;
-		right: 0;
+	.text-shadow {
+		text-shadow: 1px 1px #ffffff;
 	}
 </style>
