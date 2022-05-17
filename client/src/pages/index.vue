@@ -1,6 +1,6 @@
 <template>
 	<div v-if="loading == false" class="background-img">
-		<div class="" style="height: 100vh;"></div>
+		<div style="height: 100vh;"></div>
 		<!-- INFO -->
 		<ContactInfo />
 	</div>
@@ -25,8 +25,6 @@
 
 				pageData: pageData,
 				reqData: {},
-				reikiTitle: 'Reiki Title',
-				reikiDescription: 'Reiki description goes here',
 				services: [],
 			}
 		},
