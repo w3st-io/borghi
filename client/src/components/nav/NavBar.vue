@@ -2,10 +2,11 @@
 	<div class="w-100 fixed-top">
 		<!-- Desktop Menu -->
 		<div
-			class="mobile-nav py-4 transition"
+			class="mobile-nav py-4 transition text-center"
 			:class="[navClass]"
 		>
 			<h4 class="logo m-0 text-spread">BORGHI FINE ART</h4>
+			<h6 class="m-0">{{ companyInfo.companyCaption1 }}</h6>
 		</div>
 
 		<!-- Mobile Menu -->
@@ -94,7 +95,6 @@
 	}
 
 	.logo {
-		text-align: center;
 		font-weight: bold;
 	}
 

@@ -3,7 +3,7 @@ module.exports = {
 	companyName: 'Borghi Fine Art',
 	companyShortName: 'Borghi Fine Art',
 	
-	companyCaption1: '',
+	companyCaption1: 'New York | New Jersey | Connecticut',
 	companyCaption2: '',
 
 	companyLogo: '',
