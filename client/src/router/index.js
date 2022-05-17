@@ -10,7 +10,6 @@ import about from '@/pages/about'
 import contact from '@/pages/contact'
 import gallery from '@/pages/gallery'
 import followUs from '@/pages/follow-us'
-import menu from '@/pages/menu'
 import notFound from '@/pages/404'
 
 
@@ -60,14 +59,6 @@ const router = new VueRouter({
 			component: followUs,
 			meta: {
 				title: 'Follow Us'
-			},
-		},
-		{
-			path: '/menu',
-			name: 'menu',
-			component: menu,
-			meta: {
-				title: 'Menu'
 			},
 		},
 		// Not-Found //
