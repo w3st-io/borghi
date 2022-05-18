@@ -1,13 +1,10 @@
 <template>
-	<div class="text-light bg-primary">
+	<div class="bg-primary">
 		<BContainer class="py-4">
 			<BRow class="m-0 p-0 bg-primary contact-info">
-				<!-- EMAIL -->
-				<BCol cols="12" lg="6" xl="4" class="py-3">
-					<i class="ion-email">
-						<MailIcon size="1.1x" />
-					</i>
-					<h5 class="font-weight-bold">
+				<!-- Email -->
+				<BCol cols="12" md="6" lg="4" class="py-3">
+					<h5 class="text-tertiary font-weight-bold">
 						Email
 					</h5>
 					<h6 class="font-weight-bold">
@@ -17,32 +14,14 @@
 					</h6>
 				</BCol>
 
-				<!-- RESERVATION -->
-				<BCol cols="12" lg="6" xl="4" class="py-3">
-					<i class="ion-email">
-						<ClockIcon size="1.1x" />
-					</i>
-					<h5 class="font-weight-bold">
-						Group Reservations
+				<!-- Phone -->
+				<BCol cols="12" md="6" lg="4" class="py-3">
+					<h5 class="text-tertiary font-weight-bold">
+						Cell
 					</h5>
 					<h6 class="font-weight-bold">
-						<a :href="companyInfo.phoneNumberLink" class="text-light">
-							{{ companyInfo.phoneNumber }}
-						</a>
-					</h6>
-				</BCol>
-
-				<!-- LOCATION -->
-				<BCol cols="12" lg="6" xl="4" class="py-3">
-					<i class="ion-email">
-						<MapIcon size="1.1x" />
-					</i>
-					<h5 class="font-weight-bold">
-						Location
-					</h5>
-					<h6 class="font-weight-bold">
-						<a :href="companyInfo.googleMapsLink" target="_blank" class="text-light">
-							{{ companyInfo.address }}
+						<a :href="companyInfo.emailLink" class="text-light">
+							{{ companyInfo.email }}
 						</a>
 					</h6>
 				</BCol>
@@ -52,7 +31,7 @@
 </template>
 
 <script>
-import { ClockIcon, MailIcon, MapIcon } from 'vue-feather-icons'
+//import { MailIcon, PhoneIcon } from 'vue-feather-icons'
 
 import companyInfo from '../defaults/companyInfo'
 
@@ -64,9 +43,8 @@ export default {
 	},
 
 	components: {
-		ClockIcon,
-		MailIcon,
-		MapIcon,
+		//MailIcon,
+		//PhoneIcon,
 	},
 }
 </script>
@@ -77,10 +55,9 @@ export default {
 		float: left;
 		width: 60px;
 		height: 60px;
-		line-height: 52px;
+		line-height: 60px;
 		text-align: center;
-		background: #fff;
-		color: #c0996b;
+		color: #ffffff;
 		font-size: 30px;
 		-webkit-border-radius: 50%;
 		-moz-border-radius: 50%;

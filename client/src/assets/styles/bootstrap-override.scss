@@ -1,9 +1,9 @@
 $theme-colors: (
-	'primary': #000220,
-	'secondary': #231f20,
-	'dark': black,
-	'light': rgb(245, 245, 245),
-	'info': #9C9288
+	'primary': #2b2b2b,
+	'secondary': #4d4d4d,
+	'tertiary': #c0c0c0,
+	'black': black,
+	'white': white,
 );
 
 
@@ -38,4 +38,9 @@ $theme-colors: (
 // [CONTAINER] //
 @media (min-width: 1600px) {
 	.container { max-width: 1500px; }
+}
+
+.bg-glass {
+	background-color: rgba(0, 0, 0, 20%) !important;
+	backdrop-filter: blur(10px) !important;
 }

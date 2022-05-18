@@ -22,18 +22,13 @@ module.exports = [
 		children: [],
 	},
 	{
-		path: '/menu',
-		text: 'Menu',
-		children: [],
-	},
-	{
 		path: '/contact',
 		text: 'Contact',
 		children: [],
 	},
 	{
 		path: '/Gallery',
-		text: 'Contact',
+		text: 'Gallery',
 		children: [],
 	},
 	{

@@ -1,53 +1,46 @@
 <template>
-	<div class="w-100 bg-secondary text-secondary">
+	<div class="w-100 bg-secondary">
 		<BContainer>
 			<BRow class="pt-4">
-				<BCol cols="12" class="text-center" data-aos="fade">
+				<BCol cols="12" class="text-center" data-aos="fade" data-aos-once="true">
 					<RouterLink to="/" class="text-decoration-none">
-						<h4 class="m-0 text-primary">
+						<h4 class="m-0 text-tertiary text-spread text-uppercase font-weight-bold">
 							{{ companyInfo.companyName }}
 						</h4>
-						<h6 v-html="companyInfo.companyCaption1" class="text-light small">
+						<h6 v-html="companyInfo.companyCaption1" class="text-tertiary small">
 						</h6>
-						<hr>
 					</RouterLink>
 				</BCol>
 
-				<BCol cols="12" sm="4" class="text-center text-sm-left" data-aos="fade-up">
-					<h4 class="text-primary">Location</h4>
-					<a :href="companyInfo.googleMapsLink" class="mb-3 text-white">
-						<h5 class="mb-4">{{ companyInfo.address }}</h5>
-					</a>
-
-					<h4 class="text-primary">Hours</h4>
-					<ul class="list-unstyled text-small text-white">
-						<li
-							v-for="(hoo, index) in companyInfo.hoursOfOperation"
-							:key="index"
-						>
-							<span class="text-primary">{{ hoo.days }}:</span>
-							{{ hoo.hours }}
-						</li>
-					</ul>
-					<hr>
+				<BCol cols="12" sm="4" class="text-center" data-aos="fade-up" data-aos-once="true">
+					<h4 class="text-black">Follow Us</h4>
+					<SocialMediaPlug variant="tertiary" />
 				</BCol>
 
-				<BCol cols="12" sm="4" class="text-center" data-aos="fade-up">
-					<h4 class="text-primary">Check Us Out</h4>
+				<BCol cols="12" sm="4" class="text-center" data-aos="fade-up" data-aos-once="true">
+					<h4 class="text-black">Menu</h4>
 					<ul class="list-unstyled text-small">
 						<li v-for="(link, i) in pageLinks" :key="i">
-							<RouterLink to="/services" class="text-white">
+							<RouterLink :to="link.path" class="text-white">
 								<span v-if="link.text">{{ link.text }}</span>
 								<span v-else v-html="link.navIcon"></span>
 							</RouterLink>
 						</li>
 					</ul>
-					<hr>
 				</BCol>
 
-				<BCol cols="12" sm="4" class="text-center" data-aos="fade-up">
-					<h4 class="text-primary">Follow Us</h4>
-					<SocialMediaPlug variant="light" />
+				<BCol cols="12" sm="4" class="text-center" data-aos="fade-up" data-aos-once="true">
+					<h4 class="text-black">Contact</h4>
+					<div class="contact-info">
+						<h5 class="font-weight-bold">
+							Email
+						</h5>
+						<h6 class="font-weight-bold">
+							<a :href="companyInfo.emailLink" class="text-light">
+								{{ companyInfo.email }}
+							</a>
+						</h6>
+					</div>
 				</BCol>
 
 				<BCol cols="12" class="my-3 text-center">
@@ -56,7 +49,6 @@
 						© w3st.io {{ new Date().getFullYear() }}
 						</a>
 					</h6>
-					<br><br><br><br><br>
 				</BCol>
 			</BRow>
 		</BContainer>
@@ -68,9 +60,10 @@
 	import companyInfo from '../../defaults/companyInfo'
 	import pageLinks from '../../defaults/pageLinks'
 
+
 	export default {
 		components: {
-			SocialMediaPlug
+			SocialMediaPlug,
 		},
 
 		data() {
@@ -81,3 +74,21 @@
 		},
 	}
 </script>
+
+<style lang="scss" scoped>
+	.contact-info i {
+		display: block;
+		float: left;
+		width: 60px;
+		height: 60px;
+		line-height: 60px;
+		text-align: center;
+		color: #ffffff;
+		font-size: 30px;
+		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
+		-ms-border-radius: 50%;
+		border-radius: 50%;
+		margin-right: 20px;
+	}
+</style>
