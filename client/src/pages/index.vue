@@ -81,7 +81,9 @@
 
 <style lang="scss" scoped>
 	.background-img {
-		background-image: url('../assets/images/image.jpg');
+		background-image: url('../assets/bg.jpg');
+		background-position: center;
+		background-size: inherit 100%;
 	}
 
 	.fade-enter-active,
