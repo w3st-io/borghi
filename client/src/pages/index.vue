@@ -83,7 +83,7 @@
 	.background-img {
 		background-image: url('../assets/bg.jpg');
 		background-position: center;
-		background-size: inherit 100%;
+		background-size: inherit;
 	}
 
 	.fade-enter-active,
