@@ -11,7 +11,7 @@
 						<h1
 							class="my-3 p-0 text-light"
 							data-aos="fade"
-							:data-aos-delay="50 * i"
+							:data-aos-delay="i < 27 ? 50 * i : 0"
 							data-aos-once="true"
 						>
 							<span

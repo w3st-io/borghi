@@ -22,6 +22,11 @@ module.exports = [
 		children: [],
 	},
 	{
+		path: '/artist',
+		text: 'Artist',
+		children: [],
+	},
+	{
 		path: '/contact',
 		text: 'Contact',
 		children: [],
