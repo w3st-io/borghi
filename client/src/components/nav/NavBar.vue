@@ -2,13 +2,13 @@
 	<div>
 		<!-- Left -->
 		<div class="mobile-nav-left transition py-4">
-			<div class="ml-3">
+			<RouterLink to="/" class="ml-3">
 				<img
 					:src="logo.light"
 					class="transition"
 					style="max-width: 35px;"
 				>
-			</div>
+			</RouterLink>
 		</div>
 
 		<!-- Center -->

@@ -7,6 +7,7 @@ import VueRouter from 'vue-router'
 import companyInfo from '@/defaults/companyInfo'
 import index from '@/pages'
 import about from '@/pages/about'
+import artist from '@/pages/artist'
 import contact from '@/pages/contact'
 import gallery from '@/pages/gallery'
 import followUs from '@/pages/follow-us'
@@ -35,6 +36,15 @@ const router = new VueRouter({
 			meta: {
 				
 				title: 'Home'
+			},
+		},
+		{
+			path: '/artist',
+			name: 'artist',
+			component: artist,
+			meta: {
+				
+				title: 'Artist'
 			},
 		},
 		{

@@ -29,6 +29,19 @@
 							data-aos="fade-right"
 							data-aos-delay="200"
 						><span class="px-2 pt-3 bg-glass">ART</span></h1>
+
+						<router-link to="/artist">
+							<BButton variant="light">
+								<h1 class="m-0 text-uppercase">
+									View Artist
+									<ArrowRightIcon
+										size="1.1x"
+										stroke-width=".5px"
+										class="m-0"
+									/>
+								</h1>
+							</BButton>
+						</router-link>
 					</BCol>
 				</BRow>
 			</BContainer>
@@ -39,6 +52,8 @@
 </template>
 
 <script>
+	import { ArrowRightIcon } from 'vue-feather-icons'
+
 	// [IMPORT] Personal //
 	import ContactInfo from '@/components/ContactInfo'
 	import pageData from '@/defaults/pages'
@@ -48,6 +63,7 @@
 		name: 'Home',
 
 		components: {
+			ArrowRightIcon,
 			ContactInfo,
 		},
 
