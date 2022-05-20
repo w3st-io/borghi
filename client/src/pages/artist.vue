@@ -12,6 +12,7 @@
 							class="my-3 p-0 text-light"
 							data-aos="fade"
 							:data-aos-delay="50 * i"
+							data-aos-once="true"
 						>
 							<span
 								class="py-2 bg-glass-darker" style=""
