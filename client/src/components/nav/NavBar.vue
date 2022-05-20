@@ -30,7 +30,7 @@
 		<div class="mobile-nav-right py-4">
 			<div class="mr-3">
 				<BButton variant="outline-light" class="border-0" @click="toggle()">
-					<MenuIcon />
+					<MenuIcon size="2x" />
 				</BButton>
 			</div>
 		</div>
