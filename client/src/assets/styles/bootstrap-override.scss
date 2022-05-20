@@ -44,3 +44,8 @@ $theme-colors: (
 	background-color: rgba(0, 0, 0, 20%) !important;
 	backdrop-filter: blur(10px) !important;
 }
+
+.bg-glass-darker {
+	background-color: rgba(0, 0, 0, 50%) !important;
+	backdrop-filter: blur(50px) !important;
+}
