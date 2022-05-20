@@ -50,7 +50,7 @@
 
 			strokeWidth: {
 				type: String,
-				default: '1.5'
+				default: '1px'
 			},
 		},
 

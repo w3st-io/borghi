@@ -30,7 +30,6 @@
 				</BCol>
 
 				<BCol cols="12" sm="4" class="text-center" data-aos="fade-up" data-aos-once="true">
-					<h4 class="text-black">Contact</h4>
 					<div class="contact-info">
 						<h5 class="font-weight-bold">
 							Email

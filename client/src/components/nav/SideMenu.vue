@@ -1,16 +1,16 @@
 <template>
 	<div class="">
 		<nav
-			class="bg-light shadow nav-drawer-menu"
+			class="bg-glass-darker shadow nav-drawer-menu"
 			:class="{ 'is-open': $store.state.showMenu }"
 		>
 			<!-- Close Button -->
 			<BButton
 				v-show="$store.state.showMenu"
 				variant="secondary"
-				class="w-100 mb-2 p-4 text-white"
+				class="w-100 mb-4 p-4 text-white"
 				@click="closeMenu()"
-			><XIcon size="36" /></BButton>
+			><XIcon size="36" stroke-width="1px" /></BButton>
 
 			<!-- Menu Items -->
 			<BButton
@@ -18,7 +18,7 @@
 				:key="i"
 				v-show="$store.state.showMenu"
 				variant="outline-seconadry"
-				class="w-100 text-primary"
+				class="w-100 mb-4 text-light text-uppercase"
 				@click="menuItemClicked(button.path)"
 			>{{ button.text }}</BButton>
 
@@ -29,7 +29,7 @@
 			<SocialMediaPlug
 				v-show="$store.state.showMenu"
 				size="1.8x"
-				variant="secondary"
+				variant="light"
 				class="m-4"
 			/>
 			<br><br><br><br><br>

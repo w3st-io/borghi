@@ -32,7 +32,7 @@ module.exports = {
 	phoneNumber: '(201) 694-0105',
 	phoneNumberLink: 'tel:201-694-0105',
 
-	facebookLink: 'https://www.facebook.com/',
+	facebookLink: '',
 	instagramLink: 'https://www.instagram.com/',
 	youtubeLink: '',
 

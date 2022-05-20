@@ -10,7 +10,6 @@ import about from '@/pages/about'
 import artist from '@/pages/artist'
 import artistProfile from '@/pages/artist-profile'
 import contact from '@/pages/contact'
-import gallery from '@/pages/gallery'
 import followUs from '@/pages/follow-us'
 import notFound from '@/pages/404'
 
@@ -63,14 +62,6 @@ const router = new VueRouter({
 			component: contact,
 			meta: {
 				title: 'Contact'
-			},
-		},
-		{
-			path: '/gallery',
-			name: 'gallery',
-			component: gallery,
-			meta: {
-				title: 'Gallery'
 			},
 		},
 		{
