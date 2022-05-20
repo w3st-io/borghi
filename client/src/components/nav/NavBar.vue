@@ -16,10 +16,12 @@
 			class="mobile-nav transition py-4 text-center"
 			:class="[navClass]"
 		>
-			<h4 class="logo m-0 font-weight-bold text-spread">BORGHI FINE ART</h4>
-			<h6 class="m-0 font-weight-bold text-spread-sm small">
-				{{ companyInfo.companyCaption1 }}
-			</h6>
+			<RouterLink to="/" class="ml-3">
+				<h4 class="logo m-0 font-weight-bold text-spread">BORGHI FINE ART</h4>
+				<h6 class="m-0 font-weight-bold text-spread-sm small">
+					{{ companyInfo.companyCaption1 }}
+				</h6>
+			</RouterLink>
 		</div>
 
 		<!-- Right -->
