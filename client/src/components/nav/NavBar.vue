@@ -17,7 +17,7 @@
 			:class="[navClass]"
 		>
 			<RouterLink to="/">
-				<h4 class="logo m-0 font-weight-bold text-spread text-tertiary">
+				<h4 class="logo m-0 mt-1 font-weight-bold text-spread text-tertiary">
 					BORGHI FINE ART
 				</h4>
 				<h6 class="m-0 font-weight-bold text-spread-sm small text-tertiary">
