@@ -16,8 +16,8 @@
 			class="mobile-nav transition py-4 text-center"
 			:class="[navClass]"
 		>
-			<RouterLink to="/">
-				<h4 class="logo m-0 mt-1 font-weight-bold text-spread text-tertiary">
+			<RouterLink to="/" class="text-decoration-none">
+				<h4 class="logo m-0 mt-1 font-weight-bold text-spread text-light">
 					BORGHI FINE ART
 				</h4>
 				<h6 class="m-0 font-weight-bold text-spread-sm small text-tertiary">
