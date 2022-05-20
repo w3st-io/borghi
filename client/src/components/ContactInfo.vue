@@ -20,8 +20,8 @@
 						Cell
 					</h5>
 					<h6 class="font-weight-bold">
-						<a :href="companyInfo.emailLink" class="text-light">
-							{{ companyInfo.email }}
+						<a :href="companyInfo.phoneNumberLink" class="text-light">
+							{{ companyInfo.phoneNumber }}
 						</a>
 					</h6>
 				</BCol>
@@ -31,8 +31,6 @@
 </template>
 
 <script>
-//import { MailIcon, PhoneIcon } from 'vue-feather-icons'
-
 import companyInfo from '../defaults/companyInfo'
 
 export default {
@@ -40,11 +38,6 @@ export default {
 		return {
 			companyInfo
 		}
-	},
-
-	components: {
-		//MailIcon,
-		//PhoneIcon,
 	},
 }
 </script>
