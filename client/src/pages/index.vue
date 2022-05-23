@@ -8,7 +8,7 @@
 						class="d-none d-md-block"
 						style="padding-top: 100px;"
 					>
-						<div class="p-2 bg-glass">
+						<div class="p-2 bg-glass backlight">
 							<img :src="borghiImage" class="w-100">
 						</div>
 					</BCol>
@@ -18,20 +18,20 @@
 							class="m-0 text-light hero-text"
 							data-aos="fade-right"
 							data-aos-delay="0"
-						><span class="px-2 pt-3 bg-glass">BORGHI</span></h1>
+						><span class="px-2 pt-3 bg-glass backlight">BORGHI</span></h1>
 						<h1
 							class="m-0 text-light hero-text"
 							data-aos="fade-right"
 							data-aos-delay="100"
-						><span class="px-2 pt-3 bg-glass">FINE</span></h1>
+						><span class="px-2 pt-3 bg-glass backlight">FINE</span></h1>
 						<h1
 							class="m-0 text-light hero-text"
 							data-aos="fade-right"
 							data-aos-delay="200"
-						><span class="px-2 pt-3 bg-glass">ART</span></h1>
+						><span class="px-2 pt-3 bg-glass backlight">ART</span></h1>
 
 						<router-link to="/artist">
-							<BButton variant="light">
+							<BButton variant="light" class="backlight">
 								<h1 class="m-0 text-uppercase">
 									View Artist
 									<ArrowRightIcon

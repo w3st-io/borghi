@@ -23,3 +23,10 @@ body {
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);
 }
+
+.backlight {
+    box-shadow:
+        0 0px 0px 0 rgba(255, 255, 255, 0.2),
+        0 0px 10px 0 rgba(255, 255, 255, 0.19)
+    ;
+}

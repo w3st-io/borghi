@@ -125,7 +125,24 @@ module.exports = [
 			<br><br>
 			“The battle between good and evil, heaven and hell was preached all the time. This struggle is still within me, the lust for money and the battle for power.” Clintel's studio is in the Sunset Park area of Brooklyn, one of the last vestiges of unadulterated New York art studio space.
 		`,
-		figures: [],
+		figures: [
+			{
+				src: 'https://images2.imgbox.com/07/7b/PIReGoME_o.png',
+				text: 'Clintel Steed (American b. 1977) Rooftops over Columbia University, New York, 2012 Oil on canvas 36 x 84 inches Signed, titled and dated verso 2012',
+			},
+			{
+				src: 'https://images2.imgbox.com/f4/d1/TQwvRo0q_o.png',
+				text: 'Clintel Steed (American b. 1977) View of Manhattan Bridge, 2015 Oil on canvas 46 x 60 inches Signed, titled and dated verso 2015',
+			},
+			{
+				src: 'https://images2.imgbox.com/df/29/3GbXhVZt_o.jpg',
+				text: 'Clintel Steed (American b. 1977) Temple, Final Version Oil on canvas 36 x 36 inches Signed, titled verso',
+			},
+			{
+				src: 'https://images2.imgbox.com/50/b6/TVTqNfvT_o.jpg',
+				text: 'Clintel Steed (American b. 1977) Beijing Series Oil on canvas 36 x 36 inches Signed, titled verso',
+			},
+		],
 	},
 	{
 		name: 'Alexander Calder',
@@ -137,7 +154,20 @@ module.exports = [
 			<br><br>
 			Dividing his time between homes in Roxbury, Connecticut, and Saché, France, Calder produced a large body of works in a wide variety of mediums. His work was exhibited in several large retrospectives at the Solomon R. Guggenheim Museum, New York (1964), the Musée National d 'Art Moderne, Paris (1965), the Museum of Contemporary Art, Chicago (1974), and the Whitney Museum of American Art, New York (1976). In November 1976, soon after the opening of this last retrospective, which he personally installed, Calder died in New York.
 		`,
-		figures: [],
+		figures: [
+			{
+				src: 'https://images2.imgbox.com/b5/29/GKZDDNHO_o.jpg',
+				text: 'Alexander Calder (American 1898-1976) Blue Sun Arches wove paper 150 88/88 24 x 17 3/4 in. (60.96 x 45.09 cm) Signed lower right, numbered lower left',
+			},
+			{
+				src: 'https://images2.imgbox.com/d3/fe/T0f5S0Tj_o.jpg',
+				text: 'Alexander Calder (American 1898-1976) The Wave Lithograph 120 38/120 44 1/2 x 30 1/2 in. (113.03 x 77.47 cm) Signed lower right, numbered lower left',
+			},
+			{
+				src: 'https://images2.imgbox.com/b3/58/eWhTR5CN_o.jpg',
+				text: 'Alexander Calder (American 1898-1976) Travaux Dancier Lithograph 78/90 29 1/2 x 21 3/4 in. (74.93 x 55.25 cm) Signed lower right, numbered lower left',
+			},
+		],
 	},
 	{
 		name: 'Virginia Anderson Baker',
@@ -186,7 +216,24 @@ module.exports = [
 			<br><br>		
 			The work of Justin Maury is undoubtedly connected to the phenomena of language and image occurrence in 	popular culture. The words that take over many of Maury's works - which sometimes contain the title of the piece - always seem to be critically linked to image at hand. Maury plays with conceptions of language and image by having the figure obstruct the full comprehension of and vice versa. The viewers' constant battle to define the figure from the word becomes a futile attempt with some of Maury's new works, raising interesting questions about the nature of American popular ad culture and the inherent human desire to link image and language. Another recurring painterly element of the artist's works is the outlining of the human form with paint. This seems to be a theme in figural works without words, an aesthetic leitmotif which works to remove the adopted commercial image from the environment of advertisement to place it back into the aesthetic realm, The outline redefines the image it surrounds, creating an aesthetic form that negates legibility as a commercial product and is left only to be observed as painting, figure, color and form.
 		`,
-		figures: [],
+		figures: [
+			{
+				src: 'https://images2.imgbox.com/19/4c/YMkEG4vM_o.jpg',
+				text: '',
+			},
+			{
+				src: 'https://images2.imgbox.com/a9/33/6j0qtfH2_o.jpg',
+				text: '',
+			},
+			{
+				src: 'https://images2.imgbox.com/1d/6e/CICKAf1t_o.jpg',
+				text: '',
+			},
+			{
+				src: 'https://images2.imgbox.com/99/ee/7IJNOY6J_o.jpg',
+				text: '',
+			},
+		],
 	},
 	{
 		name: 'Tom Dash',
@@ -194,7 +241,16 @@ module.exports = [
 		description: `
 			Tom Dash has always had a passion for art and his work reflects contemporary themes working with pop iconography, mainly in post production painting, photography, sculpture, murals and installation. He developed his skills in contemporary art and was influenced by the many years he spent as a lead assistant and fabricator for Richard Prince (2005 until 2011). In 2005 Thomas D. Studio Inc. was formed to offer artists services and fabrication using a wide array of materials and methods such as acrylic, enamel, encaustic, silkscreen, wheat paste, bronze and wood. Tom has historically been involved in the art community, both in promoting his own work and collaborating with others. From 1998 on, Tom has had numerous solo and group shows, being represented by other galleries as well as one he created, the Dos Mil Gallery, in Portland Oregon. He was affiliated with Portland Institute for Contemporary Art which also produced group shows. In 2003 he was invited to be part of a group show at the Art Center in Pasadena, California. After living in Portland Oregon for many years, Tom returned to the east end of Long Island, New York in 2004 and has maintained his residence on the east end ever since. While in high school, Tom was accepted to a summer art programs at the Rhode Island School of Design and subsequently took classes at the Museum School for Fine Arts, Boston. With significant life experience added to his formal training, he uses a variety of techniques to comment on societal issues, music and popular cultural themes.
 		`,
-		figures: [],
+		figures: [
+			{
+				src: 'https://images2.imgbox.com/64/69/FRm0zJoz_o.jpg',
+				text: '"Mercedes Club", acrylic on canvas, 48 x 48 inches, sized verso',
+			},
+			{
+				src: 'https://images2.imgbox.com/9d/c0/2yRVhOiy_o.jpg',
+				text: '“Homage to Warhol”, Acrylic on canvas, 60 x 48, signed verso',
+			},
+		],
 	},
 	{
 		name: 'Marcos Grigorian',
@@ -217,6 +273,11 @@ module.exports = [
 			<br><br>
 			He died of a suspected heart attack on 27 August 2007, a day after leaving the hospital.
 		`,
-		figures: [],
+		figures: [
+			{
+				src: 'https://images2.imgbox.com/7b/e7/Tgl0h1x9_o.jpeg',
+				text: '',
+			},
+		],
 	},
 ]
