@@ -26,8 +26,8 @@ module.exports = {
 		},
 	],
 
-	email: 'lauraborghi@msn.com',
-	emailLink: 'mailto:lauraborghi@msn.com',
+	email: 'laura@borghifineart.com',
+	emailLink: 'mailto:laura@borghifineart.com',
 	
 	phoneNumber: '(201) 694-0105',
 	phoneNumberLink: 'tel:201-694-0105',
