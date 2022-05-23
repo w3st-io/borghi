@@ -8,7 +8,7 @@
 					cols="12" md="6" lg="4"
 				>
 					<RouterLink :to="`/artist-profile/${a.name}`">
-						<h1
+						<h2
 							class="my-5 py-5 p-0 text-center text-light text-uppercase bg-glass-darker backlight"
 							data-aos="fade"
 							:data-aos-delay="i < 27 ? 50 * i : 0"
@@ -19,7 +19,7 @@
 							<span
 								class="py-2 " style=""
 							>{{ a.name }}</span>
-						</h1>
+						</h2>
 					</RouterLink>
 				</BCol>
 			</BRow>
