@@ -15,27 +15,27 @@ module.exports = {
 				subject: `Interested Artist: ${req.body.email.subject}`,
 
 				sender: {
-					email: 'test@test.com',
-					name: ''
+					email: req.body.email.address,
+					name: req.body.email.name,
 				},
 
 				to: [
 					{
-						name: 'Aleem Ahmed',
-						email: 'w3st.io2021@gmail.com'
+						name: config.email.name,
+						email: config.email.address
 					}
 				],
 
 				htmlContent: `
 					<html>
 						<body>
-							<h1>This is a transactional email {{params.bodyMessage}}</h1>
+							<p>${req.body.email.message}</p>
 						</body>
 					</html>
 				`,
 
 				params: {
-					bodyMessage: 'Made just for you!'
+					bodyMessage: ''
 				}
 			}
 		).then(

@@ -30,4 +30,9 @@ module.exports = {
 	api: {
 		sendinBlue: process.env.API__SENDINBLUE
 	},
+
+	email: {
+		address: process.env.EMAIL__ADDRESS,
+		name: process.env.EMAIL__NAME,
+	}
 }
