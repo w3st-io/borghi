@@ -25,5 +25,9 @@ module.exports = {
 	SECRET_KEY: process.env.SECRET_KEY || 'secret',
 
 	// [STRIPE] //
-	STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY || ''
+	STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY || '',
+
+	api: {
+		sendinBlue: process.env.API__SENDINBLUE
+	},
 }
