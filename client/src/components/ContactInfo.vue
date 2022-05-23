@@ -13,18 +13,6 @@
 						</a>
 					</h6>
 				</BCol>
-
-				<!-- Phone -->
-				<BCol cols="12" md="6" lg="4" class="py-3">
-					<h5 class="text-tertiary font-weight-bold">
-						Cell
-					</h5>
-					<h6 class="font-weight-bold">
-						<a :href="companyInfo.phoneNumberLink" class="text-light">
-							{{ companyInfo.phoneNumber }}
-						</a>
-					</h6>
-				</BCol>
 			</BRow>
 		</BContainer>
 	</div>

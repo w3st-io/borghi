@@ -47,7 +47,7 @@
 			</BContainer>
 		</div>
 		<!-- INFO -->
-		<ContactInfo />
+		<ContactInfo v-if="0 == 1" />
 	</div>
 </template>
 

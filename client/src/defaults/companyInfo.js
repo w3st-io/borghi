@@ -29,8 +29,8 @@ module.exports = {
 	email: 'laura@borghifineart.com',
 	emailLink: 'mailto:laura@borghifineart.com',
 	
-	phoneNumber: '(201) 694-0105',
-	phoneNumberLink: 'tel:201-694-0105',
+	phoneNumber: '(201) 694-1505',
+	phoneNumberLink: 'tel:201-694-1505',
 
 	facebookLink: '',
 	instagramLink: 'https://www.instagram.com/',
