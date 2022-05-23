@@ -4,14 +4,14 @@ const express = require('express')
 
 
 // [REQUIRE] Personal //
-const rh = require('./contact.handler')
+const rh = require('./mail.handler')
 
 // [USE] //
 const router = express.Router().use(cors())
 
 
-router.get(
-	'/',
+router.post(
+	'/send-email',
 	async (req, res) => {
 		res.send(await rh.sendEmail({ req }))
 	}

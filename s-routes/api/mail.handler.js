@@ -8,15 +8,15 @@ const config = require('../../s-config')
 
 module.exports = {
 	sendEmail: async ({ req }) => {
-		SibApiV3Sdk.ApiClient.instance.authentications['api-key'].apiKey = config.API__SENDINBLUE;
+		SibApiV3Sdk.ApiClient.instance.authentications['api-key'].apiKey = config.api.sendinBlue;
 		
 		new SibApiV3Sdk.TransactionalEmailsApi().sendTransacEmail(
 			{
-				subject: `Interested Artist: ${req.body.email.subject}`,
+				subject: `Interested Artist: ${req.body.subject}`,
 
 				sender: {
-					email: req.body.email.address,
-					name: req.body.email.name,
+					email: req.body.address,
+					name: req.body.name,
 				},
 
 				to: [
@@ -29,7 +29,7 @@ module.exports = {
 				htmlContent: `
 					<html>
 						<body>
-							<p>${req.body.email.message}</p>
+							<p>${req.body.message}</p>
 						</body>
 					</html>
 				`,
@@ -40,6 +40,7 @@ module.exports = {
 			}
 		).then(
 			function(data) {
+				console.log(data);
 				return {
 					executed: true,
 					status: true,
@@ -47,6 +48,7 @@ module.exports = {
 				}
 			},
 			function(err) {
+				console.log(err);
 				return {
 					executed: true,
 					status: true,

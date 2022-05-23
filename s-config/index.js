@@ -7,10 +7,6 @@ module.exports = {
 	// [APP] //
 	NODE_ENV: process.env.NODE_ENV || 'development',
 
-	// [FUNCTIONALITY] //
-	ADMIN_USER_SYSTEM: process.env.ADMIN_USER_SYSTEM || false,
-	PAYMENT_SYSTEM: process.env.PAYMENT_SYSTEM || false,
-
 	// [URL] //
 	BASE_URL: process.env.BASE_URL || 'http://localhost:8080',
 	SOCKET_BASE_URL: process.env.BASE_URL || 'http://localhost:5000',
@@ -23,9 +19,6 @@ module.exports = {
 	
 	// [SECRET] //
 	SECRET_KEY: process.env.SECRET_KEY || 'secret',
-
-	// [STRIPE] //
-	STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY || '',
 
 	api: {
 		sendinBlue: process.env.API__SENDINBLUE

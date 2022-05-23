@@ -10,7 +10,7 @@ const path = require('path')
 // [REQUIRE] Personal // Other // API // Pages //
 const config = require('./s-config')
 
-const a_contact = require('./s-routes/api/contact')
+const a_mail = require('./s-routes/api/mail')
 
 
 // [EXPRESS] //
@@ -40,7 +40,7 @@ app.use(cors())
 
 
 // [USE][API] //
-app.use('/contact', a_contact)
+app.use('/api/mail', a_mail)
 
 
 // [HEROKU] Set Static Folder for Heroku //
