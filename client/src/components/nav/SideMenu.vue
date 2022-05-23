@@ -1,7 +1,7 @@
 <template>
 	<div class="">
 		<nav
-			class="bg-glass-darker shadow nav-drawer-menu"
+			class="bg-glass-darker backlight shadow nav-drawer-menu"
 			:class="{ 'is-open': $store.state.showMenu }"
 		>
 			<!-- Close Button -->

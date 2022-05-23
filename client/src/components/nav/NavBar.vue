@@ -13,7 +13,7 @@
 
 		<!-- Center -->
 		<div
-			class="mobile-nav transition py-4 text-center"
+			class="mobile-nav transition py-4 text-center backlight"
 			:class="[navClass]"
 		>
 			<RouterLink to="/" class="text-decoration-none">
