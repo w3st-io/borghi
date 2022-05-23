@@ -1,5 +1,5 @@
 <template>
-	<div class="py-5 bg-img transition" :style="backgroundStyle">
+	<div class="py-5 bg-img" :style="backgroundStyle">
 		<BContainer class="py-5">
 			<BRow class="my-5">
 				<BCol
@@ -9,7 +9,7 @@
 				>
 					<RouterLink :to="`/artist-profile/${a.name}`">
 						<h1
-							class="my-3 p-0 text-light"
+							class="my-3 p-0 text-center text-light text-uppercase"
 							data-aos="fade"
 							:data-aos-delay="i < 27 ? 50 * i : 0"
 							data-aos-once="true"
@@ -42,7 +42,6 @@ export default {
 		hoveredOverArtist(i) {
 			this.backgroundStyle = `
 				background-image: url(${artists[i].image});
-				background-size: 100% auto;
 
 			`
 		},
@@ -55,13 +54,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-	.slow-transition {
-		transition: 2s;
-	}
+	@import '@/assets/styles';
+
 	.bg-img {
 		background-image: url(../assets/bg.jpg);
 		background-position: center;
 		background-attachment: fixed;
+		background-size: inherit;
+		background-size: auto 100%;
 		background-size: 100% auto;
+
+		@extend .img-black-and-white;
 	}
 </style>
