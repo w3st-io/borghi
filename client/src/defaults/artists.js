@@ -1,11 +1,44 @@
 module.exports = [
 	{
 		name: 'Bradley Narduzzi Rex',
-		image: 'https://images2.imgbox.com/45/f4/fxERNsTx_o.jpg',
+		image: 'https://images2.imgbox.com/a8/8a/34JlnlLG_o.jpg',
 		description: `
 			Although he started to paint at the age of 16, he studied Architecture at the University of Columbia, where he graduated in 1991. While in New York, he worked for various small architecture firms, while continuing to paint in his spare time. In 1992, he received the Solomn R. Guggenheim Foundation Fellowship Award to work and study in Venice, Italy. While in Italy, he became familiar with the Furniture Design Industry and upon returning to New York began working with the prestigious ModernAge Gallery. In 1995, he designed his own line of contemporary furniture and began manufacturing in Mexico City. He continued to paint while working in furniture, and in the year 1999, he took residence in the La Condesa neighborhood of Mexico City. In 2001, he decided to leave the furniture industry to dedicate all of his time to the fine art of painting. He has his first important solo show was at Casa Lamm in 2003, and from there he began to exhibit in the following place in the Mexico, United States, Europe and Asia. From 2007 he has been living and working in the Centro Historico of Mexico City.
 		`,
-		figures: [],
+		figures: [
+			{
+				src: 'https://images2.imgbox.com/a8/8a/34JlnlLG_o.jpg',
+				text: 'Bradley Narduzzi Rex (American b. 1967) Early Morning (pink, yellow, blue), 2014 Acrylic on canvas 51 x 39 1/4 inches Signed, titled and dated 2014 verso',
+			},
+			{
+				src: 'https://images2.imgbox.com/93/8d/GoefiQfS_o.jpg',
+				text: 'Bradley Narduzzi Rex (American b. 1967) Late Evening (grey, pink, green), 2014 Acrylic on canvas 51 x 39 1/4 inches Signed, titled and dated 2014 verso',
+			},
+			{
+				src: 'https://images2.imgbox.com/0f/74/qWLY31Q2_o.jpg',
+				text: 'Bradley Narduzzi Rex (American b. 1967) Pink Landscape, 2014 Acrylic on canvas 63 x 51 1/8 inches Signed, titled and dated 2014 verso',
+			},
+			{
+				src: 'https://images2.imgbox.com/97/b5/YXtmf7yN_o.jpg',
+				text: 'Bradley Narduzzi Rex (American b. 1967) Yellow Landscape, 2014 Acrylic on canvas 63 x 51 1/8 inches Signed, titled and dated 2014 verso',
+			},
+			{
+				src: 'https://images2.imgbox.com/a2/ce/ke3DGZlC_o.jpg',
+				text: 'Bradley Narduzzi Rex (American b. 1967) Late Afternoon (orange, white, black and blue), 2014 Acrylic on canvas 51 x 39 1/4 inches Signed, titled and dated 2014 verso',
+			},
+			{
+				src: 'https://images2.imgbox.com/2a/4b/HdEUcj27_o.jpg',
+				text: 'Bradley Narduzzi Rex (American b. 1967) Absence of Circle on Square (30 Works) Acrylic on canvas 30 x 30 inches Signed, titled verso',
+			},
+			{
+				src: 'https://images2.imgbox.com/a1/56/9ErbEoDU_o.jpg',
+				text: 'Bradley Narduzzi Rex (American b. 1967) Leon Mexicon City, 2010 Acrylic on canvas 12 x 198 inches Each canvas is signed, titled, dated 2010 on verso',
+			},
+			{
+				src: 'https://images2.imgbox.com/cf/bc/NTzCnaUr_o.jpg',
+				text: 'Bradley Narduzzi Rex (American b. 1967) Luchas, 2012 Acrylic on canvas 14 x 234 inches Each canvas is signed, titled, dated 2012 on verso',
+			},
+		],
 	},
 	{
 		name: 'Nicholas Barbieri',
@@ -17,7 +50,68 @@ module.exports = [
 			<br><br>
 			The following 10 works by Nicholas Barbieri were inspired by one of our famous American Abstract Expressionist painter Joan Mitchell (American 1925 - 1992).
 		`,
-		figures: [],
+		figures: [
+			{
+				src: 'https://images2.imgbox.com/d4/98/NX3JQBtg_o.jpg',
+				text: 'Nicholas Barbieri (American 1942-2013) Untitled, 1983 Pastel and watercolor on paper 35 x 23 inches Signed and dated lower right, 1983',
+			},
+			{
+				src: 'https://images2.imgbox.com/0a/35/uopanjEc_o.jpg',
+				text: 'Nicholas Barbieri (American 1942-2013) Untitled, 1983 Pastel and watercolor on paper 35 x 23 inches Signed and dated lower left, 1983',
+			},
+			{
+				src: 'https://images2.imgbox.com/82/8b/jGVjz2fs_o.jpg',
+				text: 'Nicholas Barbieri (American 1942-2013) Untitled, 1982 Pastel and watercolor on paper 35 x 23 inches Signed and dated lower left, 1982',
+			},
+			{
+				src: 'https://images2.imgbox.com/6d/9f/M8bCeQx0_o.jpg',
+				text: 'Nicholas Barbieri (American 1942-2013) Untitled, 1982 Pastel and watercolor on paper 35 x 23 inches Signed and dated lower right, 1982',
+			},
+			{
+				src: 'https://images2.imgbox.com/e4/3f/MchSs2wt_o.jpg',
+				text: 'Nicholas Barbieri (American 1942-2013) Untitled, 1982 Pastel and watercolor on paper 35 x 23 inches Signed and dated lower middle, 1983',
+			},
+			{
+				src: 'https://images2.imgbox.com/1d/e8/z2GnDHvn_o.jpg',
+				text: 'Nicholas Barbieri (American 1942-2013) Untitled, 1982 Pastel and watercolor on paper 35 x 23 inches Signed and dated lower right, 1982',
+			},
+			{
+				src: 'https://images2.imgbox.com/ff/7d/v8N5h52d_o.jpg',
+				text: 'Nicholas Barbieri (American 1942-2013) Untitled, 1982 Pastel and watercolor on paper 35 x 23 inches Signed and dated lower right, 1982',
+			},
+			{
+				src: 'https://images2.imgbox.com/23/40/J7kMMmmJ_o.jpg',
+				text: 'Nicholas Barbieri (American 1942-2013) Untitled, 1982 Pastel and watercolor on paper 35 x 23 inches Signed and dated lower right, 1983',
+			},
+			{
+				src: 'https://images2.imgbox.com/62/3e/rl001R1R_o.jpg',
+				text: 'Nicholas Barbieri (American 1942-2013) Untitled, 1982 Pastel and watercolor on paper 35 x 23 inches Signed and dated lower right, 1982',
+			},
+			{
+				src: 'https://images2.imgbox.com/e6/63/xxjtVg4x_o.jpg',
+				text: 'Nicholas Barbieri (American 1942-2013) Untitled, 1982 Pastel and watercolor on paper 35 x 23 inches Signed and dated upper right, 1982',
+			},
+			{
+				src: 'https://images2.imgbox.com/a7/15/9NVgEhfB_o.jpg',
+				text: 'Nicholas Barbieri (American 1942-2013) Untitled, 1982 Pastel and watercolor on paper 35 x 23 inches Signed and dated upper right, 1982',
+			},
+			{
+				src: 'https://images2.imgbox.com/36/24/Ogo0lEHF_o.jpg',
+				text: 'Nicholas Barbieri (American 1942-2013) Incised paper with tissue paper, circa 1980 \'s Mixed media on paper 30 1/4 x 22 inches Estate stamp verso, circa 1980 \'s',
+			},
+			{
+				src: 'https://images2.imgbox.com/fd/c3/Qe2C1Fyi_o.jpg',
+				text: 'Nicholas Barbieri (American 1942-2013) Incised paper with tissue paper, circa 1980 \'s Mixed media on paper 30 1/4 x 22 inches Estate stamp verso, circa 1980 \'s',
+			},
+			{
+				src: 'https://images2.imgbox.com/d8/a5/WscyLTxt_o.jpg',
+				text: 'Nicholas Barbieri (American 1942-2013) Incised paper with tissue paper, circa 1980 \'s Mixed media on paper 30 1/4 x 22 inches Estate stamp verso, circa 1980 \'s',
+			},
+			{
+				src: 'https://images2.imgbox.com/b4/a9/wb3dsdSm_o.jpg',
+				text: 'Nicholas Barbieri (American 1942-2013) Abstract, circa 1960 \'s Watercolor and charcoal on paper 18 x 24 inches Estate stamp verso, circa 1960 \'s',
+			},
+		],
 	},
 	{
 		name: 'Clintel Steed',
@@ -39,9 +133,9 @@ module.exports = [
 		description: `
 			Alexander Calder is best known for creating mobiles—sculptures composed of abstract shapes moving through space. Born in 1898, in the Philadelphia area, Calder came from a family of artists. Both his father and his grandfather were sculptors. After graduating from the Stevens Institute of Technology in 1919 with a degree in mechanical engineering, “Sandy” (as he was known by his friends) held various jobs before entering the Art Students League of New York in 1923. In the early 1920s he worked as an illustrator, covering such events as the circus. His sketches of circus acts rekindled his childhood fascination with animals, a subject that became central to his art. In 1926 he went to Paris for the first time and stayed there until the fall of 1927. An active participant in the avant-garde milieu of Paris between the two World Wars, Calder had a wide circle of friends and colleagues in the arts. He met many of them through performances of his entourage of small sculptures, Circus, in the late twenties and through his membership from 1931 in the Abstraction-Création group, a loose alliance of artists promoting diverse multi-national trends in abstract art.
 			<br><br>
-			It was at this time that he began making small moveable animal figures in wood and in wire, using the wire as if he were drawing in space. By 1928, Calder was exhibiting his wire sculptures both in the United States and in France, where he resided periodically throughout his life. Calder created his first abstract wire sculptures in the spring of 1931, and that year Galerie Percier in Paris held an exhibition of these works, which Arp called “stabiles.” By 1932, Calder was composing his forms with the intention of making them move through space. First he experimented with motorized sculptures. But soon, by precisely adjusting the weight and balance of each shape, he created works that floated through space, propelled only by air currents. Known as mobiles, the term was coined by Calder’s fellow artist, Marcel Duchamp.
+			It was at this time that he began making small moveable animal figures in wood and in wire, using the wire as if he were drawing in space. By 1928, Calder was exhibiting his wire sculptures both in the United States and in France, where he resided periodically throughout his life. Calder created his first abstract wire sculptures in the spring of 1931, and that year Galerie Percier in Paris held an exhibition of these works, which Arp called “stabiles.” By 1932, Calder was composing his forms with the intention of making them move through space. First he experimented with motorized sculptures. But soon, by precisely adjusting the weight and balance of each shape, he created works that floated through space, propelled only by air currents. Known as mobiles, the term was coined by Calder 's fellow artist, Marcel Duchamp.
 			<br><br>
-			Dividing his time between homes in Roxbury, Connecticut, and Saché, France, Calder produced a large body of works in a wide variety of mediums. His work was exhibited in several large retrospectives at the Solomon R. Guggenheim Museum, New York (1964), the Musée National d’Art Moderne, Paris (1965), the Museum of Contemporary Art, Chicago (1974), and the Whitney Museum of American Art, New York (1976). In November 1976, soon after the opening of this last retrospective, which he personally installed, Calder died in New York.
+			Dividing his time between homes in Roxbury, Connecticut, and Saché, France, Calder produced a large body of works in a wide variety of mediums. His work was exhibited in several large retrospectives at the Solomon R. Guggenheim Museum, New York (1964), the Musée National d 'Art Moderne, Paris (1965), the Museum of Contemporary Art, Chicago (1974), and the Whitney Museum of American Art, New York (1976). In November 1976, soon after the opening of this last retrospective, which he personally installed, Calder died in New York.
 		`,
 		figures: [],
 	},
@@ -57,7 +151,32 @@ module.exports = [
 			<br><br>
 			Virginia has had group and solo exhibitions from 2011 - 2015. Her awards include Juried International WAS exhibition, Show of Champions, Watercolor Society and Houston Civic Art League and Watercolor Division. Her watercolors can be found in private collections and permanent collections such as Northwestern Insurance, and Texas AMM University. 
 		`,
-		figures: [],
+		figures: [
+			{
+				src: 'https://images2.imgbox.com/c7/c7/yXnnJY1s_o.png',
+				text: 'Virginia Baker (American b. 1933) Glowing, I Rise Again Watercolor on paper 17 3/4 x 23 3/4 inches Signed lower rights',
+			},
+			{
+				src: 'https://images2.imgbox.com/de/26/Irbt9Z1c_o.png',
+				text: 'Virginia Baker (American b. 1933) Joyful Watercolor on paper 24 x 21 1/24 inches Signed lower right',
+			},
+			{
+				src: 'https://images2.imgbox.com/b0/f3/1wRPsBqV_o.png',
+				text: 'Virginia Baker (American b. 1933) Squaring the Circle Watercolor on paper 15 x 17 inches Signed lower right',
+			},
+			{
+				src: 'https://images2.imgbox.com/22/4c/tqdFn3oc_o.png',
+				text: 'Virginia Baker (American b. 1933) Dancing in the Rain Watercolor on paper 15 x 20 1/2 inches Signed lower right',
+			},
+			{
+				src: 'https://images2.imgbox.com/92/3b/oAerKaOM_o.png',
+				text: 'Virginia Baker (American b. 1933) Creation Watercolor on paper 17 x 14 1/2 inches Signed lower right',
+			},
+			{
+				src: 'https://images2.imgbox.com/7e/3b/ckkHSikJ_o.png',
+				text: 'Virginia Baker (American b. 1933) Conception Watercolor and pencil on paper 24 x 18 inches Signed lower right',
+			},
+		],
 	},
 	{
 		name: 'Justin Fontaine Maury',

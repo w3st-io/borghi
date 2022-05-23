@@ -2,9 +2,23 @@
 	<div class="py-5">
 		<div class="py-5">
 			<BContainer class="mx-auto py-5" style="max-width: 800px;">
-				<h1 data-aos="fade-right">{{ $route.params.artist }}</h1>
+				<h1 class="mb-5 text-uppercase" data-aos="fade-right">{{ $route.params.artist }}</h1>
 
-				<p v-html="artist.description"></p>
+				<p v-html="artist.description" class="mb-5"></p>
+
+				<BRow>
+					<BCol
+						v-for="(f, i) in artist.figures"
+						:key="i"
+						cols="12" sm="6"
+						class="mb-4"
+						data-aos="fade-up"
+						data-aos-once="true"
+					>
+						<img :src="f.src" alt="" class="w-100">
+						<h6 class="my-3 font-weight-bold">{{ f.text }}</h6>
+					</BCol>
+				</BRow>
 			</BContainer>
 		</div>
 	</div>
