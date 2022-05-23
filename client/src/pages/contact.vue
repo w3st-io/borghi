@@ -19,12 +19,14 @@
 				<textarea v-model="email.message" name="message" rows="10" class="w-100 mb-4 form-control"></textarea>
 
 				<BButton
+					@disable="disable"
 					variant="tertiary"
 					class="w-100"
 					@click="send()"
 				>Send</BButton>
 				<hr>
-				{{ this.resData }}
+				<h6 v-if="success" class="text-success">Email Sent!</h6>
+				<h6 v-if="error" class="text-danger">{{ error }}</h6>
 			</BContainer>
 		</div>
 	</BContainer>
@@ -36,6 +38,7 @@
 	import ContactInfo from '@/components/ContactInfo'
 	import DPage from '@/defaults/pages/directions'
 	import serviceApiMail from '../services/api/mail'
+	import router from '@/router'
 
 	export default {
 		components: {
@@ -45,6 +48,9 @@
 		data() {
 			return {
 				resData: {},
+				success: false,
+				error: '',
+				disable: false,
 
 				DPage: DPage,
 
@@ -59,9 +65,21 @@
 
 		methods: {
 			async send() {
+				this.disable = true
+
 				this.resData = await serviceApiMail.s_sendEmail({
 					email: this.email
 				})
+
+				if (this.resData.status) {
+					this.success = true
+
+					setTimeout(() => { router.push('/') }, 1000)
+				}
+				else {
+					this.disable = false
+					this.error = this.resData.message
+				}
 			}
 		},
 	}
